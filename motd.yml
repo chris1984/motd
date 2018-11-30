@@ -1,0 +1,9 @@
+---
+- name: Set MOTD on remote machine
+  hosts: all
+  become: true
+  remote_user: root
+  become_method: enable
+
+  roles:
+    - chris1984.motd

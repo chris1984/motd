@@ -1,6 +1,5 @@
-# test file for adriagalin.motd
 ---
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible.motd
+    - chris1984.motd
