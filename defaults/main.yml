@@ -1,0 +1,37 @@
+---
+
+motd_sysadmins_signature: Chris Roberts
+motd_sysadmins_email: chrobert@redhat.com
+
+motd_info:
+  - " FQDN:    ": "{{ ansible_fqdn }}"
+  - " Distro:  ": "{{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+  - " Virtual: ": "{{ 'YES' if ansible_virtualization_role == 'guest' else 'NO' }}\n"
+  - " CPUs:    ": "{{ ansible_processor_vcpus }}"
+  - " RAM:     ": "{{ (ansible_memtotal_mb / 1000) | round(1) }}GB"
+
+motd_content: |
+
+  --------------------------------------------------------------------------
+                      This system is managed by Ansible
+  --------------------------------------------------------------------------
+
+  This is {{ ansible_fqdn }} running {{ ansible_distribution }}.
+
+  NOTE: System and application configuration for this host is managed by
+  Ansible Tower. To ensure that any changes you make here are not lost,
+  please contact with your system administrators.
+
+  {% for item in ag_motd_info %}
+  {% for key, value in item.iteritems() %}
+  {{ key }}{{ value }}
+  {% endfor %}
+  {% endfor %}
+
+  Yours,
+  {{ motd_sysadmins_signature }}
+  email: {{ motd_sysadmins_email }}
+
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  Last ansible run: {{ ansible_date_time.iso8601 }}
