@@ -3,6 +3,10 @@ chris1984.motd
 
 An ansible role for configuring Message Of The Day (motd) file. By default this role adds additional information about the distro and the hardware.
 
+Build Status
+------------
+[![Build Status](https://travis-ci.org/chris1984/motd.svg?branch=master)](https://travis-ci.org/chris1984/motd)
+
 Requirements
 ------------
 
