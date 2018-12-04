@@ -1,5 +1,5 @@
 ---
-- name: Add motd
+- name: Set MOTD on remote machine
   template:
-    src: /etc/motd.j2
+    src: templates/etc/motd.j2
     dest: /etc/motd

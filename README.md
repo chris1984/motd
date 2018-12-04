@@ -5,6 +5,7 @@ An ansible role for configuring Message Of The Day (motd) file. By default this 
 
 Build Status
 ------------
+
 [![Build Status](https://travis-ci.org/chris1984/motd.svg?branch=master)](https://travis-ci.org/chris1984/motd)
 
 Requirements
@@ -51,7 +52,7 @@ This playbook produces the /etc/motd file looking like this:
                     This system is managed by Ansible
 --------------------------------------------------------------------------
 
-This is host1 running Debian.
+This is host1 running RHEL.
 
 NOTE: System and application configuration for this host is managed by
 Ansible Tower. To ensure that any changes you make here are not lost,
